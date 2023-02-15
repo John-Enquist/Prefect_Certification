@@ -1,0 +1,40 @@
+###
+### A complete description of a Prefect Deployment for flow 'alpha-flow'
+###
+name: certif
+description: null
+version: 9ad51b677ba46df1676a020b6f224cf0
+# The work queue that will handle this deployment's runs
+work_queue_name: test_env
+work_pool_name: null
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: alpha-flow
+manifest_path: null
+storage: null
+path: C:\Projects\prefect_2
+entrypoint: lab_three.py:alpha_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties: {}
+  required: null
+  definitions: null
+timestamp: '2023-02-15T19:17:00.701774+00:00'
