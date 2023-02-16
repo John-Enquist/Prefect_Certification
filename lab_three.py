@@ -5,10 +5,10 @@ import pandas as pd
 import requests
 from prefect.blocks.system import Secret
 
-# secret_block = Secret.load("alphavantage")
+# lab 103
 
-# # Access the stored secret
-# secret_block.get()
+#purpose of this lab was to load a secret that was created
+#in the prefect ui 
 
 
 @task(cache_key_fn=task_input_hash, retries=2, retry_delay_seconds=5)

@@ -4,15 +4,9 @@ from prefect.tasks import task_input_hash
 import yfinance as yf
 import pandas as pd
 
-# @flow(retries=2, retry_delay_seconds=2)
-# def test_flow():
-#     logger = get_run_logger()
-#     logger.info("info level log message")
-#     logger.debug("debug level log message")
-
-
-#     res = httpx.get("https://example.com")
-#     print(res)
+#lab 102
+#the purpose of this lab was to run a subflow within a flow, as well as try caching,
+# and retry functionality
 
 @task(cache_key_fn=task_input_hash, retries=2, retry_delay_seconds=5)
 def yfinance_flow(ticker):
@@ -30,6 +24,7 @@ def sub_flow_ex():
     try:
         ass_df = yfinance_flow("ASS")
         print("successful tick")
+        return ass_df
     except:
         print("this may not be a real ticker...")
         pass
